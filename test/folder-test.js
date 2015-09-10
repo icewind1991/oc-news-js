@@ -64,7 +64,7 @@ describe('Folder', () => {
 			assert.equal(0, folders.length);
 		});
 	});
-	describe('#listFeeds', function() {
+	describe('#listFeeds', function () {
 		this.timeout(5000);
 		it('should not show feeds outside the folder', async () => {
 			const folder = await client.newFolder('Foo');
@@ -86,15 +86,15 @@ describe('Folder', () => {
 		it('should not show items of feeds outside the folder', async () => {
 			const folder = await client.newFolder('Foo');
 			await client.newFeed(sampleFeed, 0);
-			const feeds = await folder.getItems();
-			assert.equal(0, feeds.length);
+			const items = await folder.getItems();
+			assert.equal(0, items.length);
 		});
 
 		it('should show items of feeds inside the folder', async () => {
 			const folder = await client.newFolder('Foo');
 			await client.newFeed(sampleFeed, folder.id);
-			const feeds = await folder.getItems();
-			assert(feeds.length > 1);
+			const items = await folder.getItems();
+			assert(items.length > 1);
 		});
 	});
 
@@ -103,15 +103,40 @@ describe('Folder', () => {
 		it('should not show new items of feeds outside the folder', async () => {
 			const folder = await client.newFolder('Foo');
 			await client.newFeed(sampleFeed, 0);
-			const feeds = await folder.getNewItems(500);
-			assert.equal(0, feeds.length);
+			const items = await folder.getNewItems(500);
+			assert.equal(0, items.length);
 		});
 
 		it('should show new items of feeds inside the folder', async () => {
 			const folder = await client.newFolder('Foo');
 			await client.newFeed(sampleFeed, folder.id);
-			const feeds = await folder.getNewItems(500);
-			assert(feeds.length > 1);
+			const items = await folder.getNewItems(500);
+			assert(items.length > 1);
+		});
+	});
+
+	describe('#markAsRead', function () {
+		this.timeout(5000);
+		it('should not mark items of feeds outside the folder as read', async () => {
+			const folder = await client.newFolder('Foo');
+			await client.newFeed(sampleFeed, 0);
+			await folder.markAsRead(999999999);
+			const items = await client.getItems();
+			assert(items.length > 1);
+			for (let item of items) {
+				assert(item.unread === true);
+			}
+		});
+
+		it('should mark items of feeds inside the folder as read', async () => {
+			const folder = await client.newFolder('Foo');
+			await client.newFeed(sampleFeed, folder.id);
+			await folder.markAsRead(999999999);
+			const items = await client.getItems();
+			assert(items.length > 1);
+			for (let item of items) {
+				assert(item.unread === false);
+			}
 		});
 	});
 });
