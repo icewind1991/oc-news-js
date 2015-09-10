@@ -1,0 +1,24 @@
+{
+  "name": "oc-news-js",
+  "version": "0.1.0",
+  "description": "Javascript client for the ownCloud news app for node and the browser",
+  "author": "Tulio Ornelas <robin@icewind.nl>",
+  "main": "build/news.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/browserify -t babelify src/Client.js --no-builtins -o build/news.js",
+    "release": "npm run build && ./node_modules/.bin/uglifyjs build/news.js -o build/news.min.js -c --screw-ie8 --comments /^\\s*/*!/",
+    "test-node": "./node_modules/.bin/mocha --compilers js:babel/register test/*-test.js"
+  },
+  "dependencies": {
+    "Base64": "^0.3.0",
+    "mappersmith": "^0.8.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "mocha": "^2.3.2",
+    "uglifyjs": "^2.4.10"
+  }
+}

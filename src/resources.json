@@ -1,0 +1,103 @@
+{
+  "Folder": {
+    "all": {
+      "path": "/folders"
+    },
+    "byId": {
+      "path": "/folders/{id}"
+    },
+    "rename": {
+      "method": "PUT",
+      "path": "/folders/{id}"
+    },
+    "markAsRead": {
+      "method": "PUT",
+      "path": "/folders/{id}/read"
+    },
+    "delete": {
+      "method": "DELETE",
+      "path": "/folders/{id}"
+    },
+    "newFolder": {
+      "method": "POST",
+      "path": "/folders"
+    }
+  },
+  "Feed": {
+    "all": {
+      "path": "/feeds"
+    },
+    "newFeed": {
+      "method": "POST",
+      "path": "/feeds"
+    },
+    "delete": {
+      "method": "DELETE",
+      "path": "/feeds/{id}"
+    },
+    "move": {
+      "method": "PUT",
+      "path": "/feeds/{id}/move"
+    },
+    "rename": {
+      "method": "PUT",
+      "path": "/feeds/{id}/rename"
+    },
+    "markAsRead": {
+      "method": "PUT",
+      "path": "/feeds/{id}/read"
+    }
+  },
+  "Status": {
+    "version": {
+      "path": "/version"
+    },
+    "get": {
+      "path": "/status"
+    }
+  },
+  "Item": {
+    "list": {
+      "path": "/items"
+    },
+    "updated": {
+      "path": "/items/updated"
+    },
+    "markAsRead": {
+      "method": "PUT",
+      "path": "/items/{id}/read"
+    },
+    "markAsUnread": {
+      "method": "PUT",
+      "path": "/items/{id}/unread"
+    },
+    "markMultipleAsRead": {
+      "method": "PUT",
+      "path": "/items/read/multiple"
+    },
+    "markMultipleAsUnread": {
+      "method": "PUT",
+      "path": "/items/unread/multiple"
+    },
+    "markAsStarred": {
+      "method": "PUT",
+      "path": "/items/{feedId}/{guidHash}/star"
+    },
+    "markAsUnstarred": {
+      "method": "PUT",
+      "path": "/items/{feedId}/{guidHash}/unstar"
+    },
+    "markMultipleAsStarred": {
+      "method": "PUT",
+      "path": "/items/star/multiple"
+    },
+    "markMultipleAsUnstarred": {
+      "method": "PUT",
+      "path": "/items/unstar/multiple"
+    },
+    "markAllAsRead": {
+      "method": "PUT",
+      "path": "/items/read"
+    }
+  }
+}
