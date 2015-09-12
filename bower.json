@@ -1,6 +1,6 @@
 {
   "name": "oc-news-js",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/icewind1991/oc-news-js",
   "authors": [
     "Robin Appelman <icewind@owncloud.com>"
@@ -15,5 +15,6 @@
     "test",
     "src",
     "build"
-  ]
+  ],
+  "moduleType": "node"
 }
