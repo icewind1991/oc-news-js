@@ -8,7 +8,7 @@ import {feedFromResult, itemFromResult} from './ResultParser'
 
 export default class Client {
 	constructor (endpoint, user, pass) {
-		this.client = getClient('http://localhost/owncloud', 'test', 'test');
+		this.client = getClient(endpoint, user, pass);
 	}
 
 	async listFolders () {

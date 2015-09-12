@@ -9560,7 +9560,7 @@ var Client = (function () {
 	function Client(endpoint, user, pass) {
 		_classCallCheck(this, Client);
 
-		this.client = (0, _Mapper.getClient)('http://localhost/owncloud', 'test', 'test');
+		this.client = (0, _Mapper.getClient)(endpoint, user, pass);
 	}
 
 	_createClass(Client, [{
