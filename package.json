@@ -2,7 +2,7 @@
   "name": "oc-news-js",
   "version": "0.1.1",
   "description": "Javascript client for the ownCloud news app for node and the browser",
-  "author": "Tulio Ornelas <robin@icewind.nl>",
+  "author": "Robin Appelman <robin@icewind.nl>",
   "main": "lib/Client.js",
   "license": "MIT",
   "scripts": {
