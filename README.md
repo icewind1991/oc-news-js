@@ -19,6 +19,12 @@ For plain browser usage
 var client = new Client('https://example.com/owncloud', 'username', 'password');
 ```
 
+# Structure
+
+- `src/` source files
+- `lib/` prebuild files for npm using `npm run build-npm`
+- `build/` prebuild files for the browser using `npm run build-browser`, `npm run release` 
+
 # API
 
 All functions return a promise and can also be used with es7 style async/await
