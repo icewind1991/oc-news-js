@@ -1,0 +1,19 @@
+{
+  "name": "oc-news-js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/icewind1991/oc-news-js",
+  "authors": [
+    "Robin Appelman <icewind@owncloud.com>"
+  ],
+  "description": "Javascript client for the ownCloud news app for node and the browser",
+  "main": "lib/Client.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "build"
+  ]
+}
