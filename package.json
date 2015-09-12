@@ -1,6 +1,6 @@
 {
   "name": "oc-news-js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Javascript client for the ownCloud news app for node and the browser",
   "author": "Robin Appelman <robin@icewind.nl>",
   "main": "lib/Client.js",
