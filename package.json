@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "Base64": "^0.3.0",
-    "mappersmith": "^0.8.0"
+    "mappersmith": "^0.9.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
